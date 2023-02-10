@@ -122,4 +122,13 @@ $(document).ready(() => {
 });
 
 // Enable links to open in new tab
-$('a').attr('target', '_blank');
+$(document).ready(() => {
+  $('a').each(() => {
+    const a = new RegExp('/' + window.location.host + '/');
+    if (!a.test(this.href)) {
+      $(this).click(() => {
+        window.open(this.href);
+      });
+    }
+  });
+});
