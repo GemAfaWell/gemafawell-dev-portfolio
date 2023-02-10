@@ -125,7 +125,6 @@
 // Enable smooth scrolling on all links inside the navbar and throughout the site
 $(document).ready(() => {
 	$('a').on('click', (event) => {
-		var target = $(this.getAttribute('href'));
 		if (target.length) {
 			event.preventDefault();
 			$('html, body').stop().animate({
