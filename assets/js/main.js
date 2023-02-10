@@ -134,3 +134,6 @@ $(document).ready(() => {
 		}
 	});
 });
+
+// Enable links to open in new tab
+$("a").attr("target", "_blank");
