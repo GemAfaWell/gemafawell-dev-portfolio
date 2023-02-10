@@ -174,15 +174,20 @@
                     <h2>Contact Me</h2>
                     <p>Want to get in touch? Fill out the form below, and I'll get back to you as soon as I can!</p>
                 </header>
-                <form name="contact" method="post" enctype="text/plain" data-netlify="true">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Your name">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Your email">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
-                    <input class="button" type="submit" value="Send">
-                </form>
+                <form name="contact" method="POST" data-netlify="true">
+                    <p>
+                      <label>Your Name: <input type="text" name="name" /></label>
+                    </p>
+                    <p>
+                      <label>Your Email: <input type="email" name="email" /></label>
+                    </p>
+                    <p>
+                      <label>Message: <textarea name="message"></textarea></label>
+                    </p>
+                    <p>
+                      <button type="submit">Send</button>
+                    </p>
+                  </form>
             </section>
 
         </div>
