@@ -125,11 +125,14 @@
 // Enable smooth scrolling on all links inside the navbar and throughout the site
 $(document).ready(() => {
 	$('a').on('click', (event) => {
-		if (target.length) {
+		if (this.hash !== '') {
 			event.preventDefault();
-			$('html, body').stop().animate({
-				scrollTop: target.offset().top
-			}, 1000);
+			const hash = this.hash;
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, () => {
+				window.location.hash = hash;
+			});
 		}
 	});
 });
