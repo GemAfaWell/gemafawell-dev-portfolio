@@ -121,15 +121,22 @@ $(document).ready(() => {
   });
 });
 
-// create an event listener for each link in the icons section
-const icons = document.querySelectorAll('.icon');
-// loop through each icon
-icons.forEach((icon) => {
-  // add an event listener to each icon
-  icon.addEventListener('click', () => {
-    // get the link from the href attribute
-    const link = icon.getAttribute('href');
-    // open the link in a new tab
-    window.open(link, '_blank');
-  });
+// create an event listener for all links
+$('a').on('click', function (event) {
+  // prevent the default action of the link
+  event.preventDefault();
+  // get the href attribute of the link
+  const href = $(this).attr('href');
+  // open the link in a new tab
+  window.open(href, '_blank');
+});
+
+// create an event listener for all buttons with the class 'button'
+$('.button').on('click', function (event) {
+  // prevent the default action of the button
+  event.preventDefault();
+  // get the href attribute of the button
+  const href = $(this).attr('formaction');
+  // open the link in a new tab
+  window.open(href, '_blank');
 });
