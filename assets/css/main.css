@@ -2095,6 +2095,7 @@ button.primary.icon:before,
   color: #ffffff !important;
 }
 
+
 /* Form */
 
 form {
@@ -2544,6 +2545,15 @@ ul li {
   padding: 0.5em;
   margin: 0.5em;
   width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+  ul {
+    flex-direction: column;
+  }
+  ul li {
+    width: 100%;
+  }
 }
 
 ul.alt {
