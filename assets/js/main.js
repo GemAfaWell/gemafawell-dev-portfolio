@@ -102,33 +102,25 @@
   });
 })(jQuery);
 
-// Enable smooth scrolling on all links inside the navbar and throughout the site
-$(document).ready(() => {
-  $('a').on('click', (event) => {
-    if (this.hash !== '') {
-      event.preventDefault();
-      const hash = this.hash;
-      $('html, body').animate(
-        {
-          scrollTop: $(hash).offset().top,
-        },
-        800,
-        () => {
-          window.location.hash = hash;
-        }
-      );
-    }
-  });
-});
 
 // create an event listener for all links
-$('a').on('click', function (event) {
+$('a', ).on('click', function (event) {
   // prevent the default action of the link
   event.preventDefault();
   // get the href attribute of the link
   const href = $(this).attr('href');
-  // open the link in a new tab
-  window.open(href, '_blank');
+  // open the link in a new tab if it is an external link
+  if (href.startsWith('http')) {
+    window.open(href, '_blank');
+  } else {
+    // otherwise, scroll to the section
+    $('html, body').animate(
+      {
+        scrollTop: $(href).offset().top,
+      },
+      800
+    );
+  }
 });
 
 // create an event listener for all buttons with the class 'button'
@@ -137,6 +129,16 @@ $('.button').on('click', function (event) {
   event.preventDefault();
   // get the href attribute of the button
   const href = $(this).attr('formaction');
-  // open the link in a new tab
-  window.open(href, '_blank');
+  // open the link in a new tab if it is an external link
+  if (href.startsWith('http')) {
+    window.open(href, '_blank');
+  } else {
+    // otherwise, scroll to the section
+    $('html, body').animate(
+      {
+        scrollTop: $(href).offset().top,
+      },
+      800
+    );
+  }
 });

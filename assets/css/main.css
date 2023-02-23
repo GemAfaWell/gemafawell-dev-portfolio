@@ -86,14 +86,18 @@ section,
 summary,
 time,
 mark,
-audio,
-video {
+audio {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 0.5em;
 }
 
 article,
@@ -2549,12 +2553,26 @@ ul li {
 
 @media screen and (max-width: 736px) {
   ul {
-    flex-direction: column;
+    display: flex;
+  }
+  #main .icon.major {
+    border: 0;
   }
   ul li {
     width: 100%;
   }
+  .vert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
+
 
 ul.alt {
   list-style: none;
@@ -3633,14 +3651,6 @@ body.is-preload #header.alt .logo {
   color: rgba(99, 99, 99, 0.25) !important;
 }
 
-#main .icon.major {
-  border-color: #dddddd;
-}
-
-#main .icon.major:before {
-  border-color: #dddddd;
-}
-
 #main .icon.alt {
   border-color: #dddddd;
   color: #636363;
@@ -3798,63 +3808,32 @@ body.is-preload #header.alt .logo {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 5em 5em 3em 5em;
-  width: calc(100% + 2em);
-  margin: 0 0 3em -2em;
+  padding: 1em;
+  width: 100%;
 }
 
 #footer > * {
-  width: calc(50% - 2em);
-  margin-left: 2em;
+  width: 100%;
 }
 
 #footer .copyright {
   width: 100%;
-  margin: 2.5em 0 2em 0;
   font-size: 0.8em;
   text-align: center;
 }
 
-@media screen and (max-width: 1280px) {
-  #footer {
-    padding: 4em 4em 2em 4em;
-  }
-}
-
 @media screen and (max-width: 980px) {
   #footer {
-    padding: 4em 3em 2em 3em;
     display: block;
-    margin: 0 0 3em 0;
     width: 100%;
   }
 
   #footer > * {
     width: 100%;
-    margin-left: 0;
-    margin-bottom: 3em;
   }
 
   #footer .copyright {
-    text-align: left;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  #footer {
-    padding: 3em 2em 1em 2em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #footer {
-    padding: 3em 1.5em 1em 1.5em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #footer {
-    padding: 2.5em 1em 0.5em 1em;
+    text-align: center;
   }
 }
 
